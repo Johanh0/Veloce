@@ -1,5 +1,9 @@
-const Button = ({ children, btnType }) => {
-  return <button className={btnType}>{children}</button>;
+const Button = ({ children, btnType, onSubmit }) => {
+  return (
+    <button className={btnType} onClick={onSubmit}>
+      {children}
+    </button>
+  );
 };
 
 export default Button;

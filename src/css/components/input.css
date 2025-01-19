@@ -1,0 +1,12 @@
+.input__container {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+}
+.input__container input {
+  background-color: #ebedef;
+  border: none;
+  height: 45px;
+  padding-left: 10px;
+  border-radius: 5px;
+}

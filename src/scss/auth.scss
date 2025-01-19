@@ -1,0 +1,66 @@
+@forward "./global";
+@use "./var";
+
+.auth__container {
+  display: flex;
+  gap: 20px;
+  width: 100vw;
+  height: 100vh;
+  padding: 50px;
+
+  &--form {
+    flex: 1;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    &--header {
+      min-width: 350px;
+
+      & h4 {
+        font-size: map-get(var.$font-size, "lg");
+        font-weight: bold;
+      }
+
+      & p {
+        font-size: map-get(var.$font-size, "sm");
+      }
+    }
+
+    & form.signup .signup__container--names {
+      display: flex;
+      gap: 20px;
+
+      & .input__container {
+        flex: 1;
+      }
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      min-width: 350px;
+      height: fit-content;
+      font-size: map-get(var.$font-size, "sm");
+
+      & .form--message span {
+        color: map-get(var.$colors, "primary");
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--cover {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    width: fit-content;
+    padding-left: 20px;
+    background-color: map-get(var.$colors, "tertiary");
+    border-radius: map-get(var.$border-radius, "lg");
+  }
+}
