@@ -17,7 +17,7 @@ const Login = ({ onSelect }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("", {
+      const response = await fetch("/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
