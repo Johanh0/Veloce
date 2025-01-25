@@ -1,0 +1,129 @@
+@forward "./global";
+@use "./var";
+@use "./mixins/mediaQueries" as *;
+
+.auth__container {
+  position: relative;
+  display: flex;
+  gap: 20px;
+  width: 100vw;
+  height: 100vh;
+  padding: 50px;
+
+  @include smartphone-only {
+    padding: 15px;
+  }
+
+  .auth__container--header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 50px 0 0 50px;
+
+    @include smartphone-only {
+      display: none;
+    }
+  }
+
+  .auth__container--header .arrow-left {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+  }
+
+  .auth__container--header .arrow-left:hover {
+    background-color: map-get(var.$colors, "tertiary");
+  }
+
+  &--form {
+    flex: 1;
+    gap: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+
+    @include smartphone-only {
+      text-align: center;
+    }
+
+    &--header {
+      min-width: 350px;
+
+      & h4 {
+        font-size: map-get(var.$font-size, "xl");
+        font-weight: bold;
+      }
+
+      & p {
+        font-size: map-get(var.$font-size, "sm");
+      }
+    }
+
+    & form.signup .signup__container--names {
+      display: flex;
+      gap: 20px;
+
+      & .input__container {
+        flex: 1;
+      }
+
+      @include smartphone-only {
+        text-align: start;
+      }
+    }
+
+    & form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      min-width: 350px;
+      height: fit-content;
+      font-size: map-get(var.$font-size, "sm");
+
+      @include smartphone-only {
+        width: 100%;
+        max-width: 350px;
+        min-width: none;
+      }
+
+      .input__container {
+        @include smartphone-only {
+          text-align: start;
+        }
+      }
+
+      & .form--message span {
+        color: map-get(var.$colors, "primary");
+        cursor: pointer;
+      }
+    }
+  }
+
+  &--cover {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    max-width: 800px;
+
+    @include tablet-only {
+      display: none;
+    }
+
+    @include smartphone-only {
+      display: none;
+    }
+
+    & div {
+      width: 100%;
+      height: 100%;
+      & video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: map-get(var.$border-radius, "lg");
+      }
+    }
+  }
+}

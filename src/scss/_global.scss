@@ -1,0 +1,41 @@
+@use "./var";
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+input,
+select,
+textarea {
+  outline-color: map-get(var.$colors, "primary");
+}
+
+.primary--btn {
+  height: 45px;
+  border: none;
+  border-radius: map-get(var.$border-radius, "sm");
+  background-color: map-get(var.$colors, "primary");
+  color: map-get(var.$colors, "white");
+  font-weight: bold;
+  cursor: pointer;
+}
+
+body #root {
+  display: grid;
+  height: fit-content;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+body #root :where(header, main, footer) {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+}

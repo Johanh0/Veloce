@@ -1,0 +1,15 @@
+@use "../var";
+
+.input__container {
+  display: flex;
+  gap: 5px;
+  flex-direction: column;
+
+  & input {
+    background-color: map-get(var.$colors, "gray");
+    border: none;
+    height: 45px;
+    padding-left: 10px;
+    border-radius: map-get(var.$border-radius, "sm");
+  }
+}
