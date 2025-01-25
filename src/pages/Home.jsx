@@ -1,11 +1,31 @@
 import Header from "../components/Header";
-
+import Button from "../components/Button";
+import blueCarSvg from "../assets/images/blue-car.svg";
+import "../css/home.css";
 const Home = () => {
   return (
     <>
       <Header />
       <main>
-        <h1>Hello</h1>
+        <section className="hero">
+          <div className="hero__left">
+            <div>
+              <h1>
+                Find, book, and rental car in <span>Easy</span> steps
+                <span>.</span>
+              </h1>
+            </div>
+            <div>
+              <p>Get a car wherever and whenever you need! Check our catalog</p>
+            </div>
+            <div>
+              <Button>Catalog</Button>
+            </div>
+          </div>
+          <div className="hero__right">
+            <img src={blueCarSvg} alt="blue car image" />
+          </div>
+        </section>
       </main>
       <footer>foo</footer>
     </>

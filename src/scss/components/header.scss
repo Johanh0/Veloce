@@ -1,11 +1,54 @@
+@use "../var";
+@use "../mixins/buttons" as *;
+
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
+  .nav__logo {
+    font-size: map-get(var.$font-size, "lg");
+    font-weight: bold;
+
+    a {
+      color: map-get(var.$colors, "primary");
+    }
+  }
+
   .nav__links ul {
     display: flex;
-    gap: 25px;
+    gap: 45px;
     list-style: none;
+  }
+
+  .nav__options button {
+    @include transparent-btn;
+  }
+}
+
+.nav__user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  gap: 20px;
+
+  .nav__user--profile {
+    display: flex;
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .nav__user--info {
+    font-size: map-get(var.$font-size, "sm");
+  }
+
+  .nav__user--menu img {
+    cursor: pointer;
+    width: 15px;
   }
 }

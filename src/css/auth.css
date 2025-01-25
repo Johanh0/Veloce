@@ -7,6 +7,12 @@
 html {
   font-size: 62.5%;
   font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
 }
 
 input,
@@ -89,11 +95,11 @@ body #root :where(header, main, footer) {
   min-width: 350px;
 }
 .auth__container--form--header h4 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: bold;
 }
 .auth__container--form--header p {
-  font-size: 1.5rem;
+  font-size: 0.7rem;
 }
 .auth__container--form form.signup .signup__container--names {
   display: flex;
@@ -113,7 +119,7 @@ body #root :where(header, main, footer) {
   gap: 15px;
   min-width: 350px;
   height: fit-content;
-  font-size: 1.5rem;
+  font-size: 0.7rem;
 }
 @media (max-width: 699px) {
   .auth__container--form form {

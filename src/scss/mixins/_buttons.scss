@@ -1,0 +1,49 @@
+@use "../var";
+
+@mixin primary-btn {
+  font-family: inherit;
+  display: inline-block;
+  width: 6em;
+  height: 2.6em;
+  line-height: 2.5em;
+  overflow: hidden;
+  cursor: pointer;
+  font-size: 17px;
+  z-index: 1;
+  color: white;
+  border: 2px solid map-get(var.$colors, "primary");
+  border-radius: 6px;
+  position: relative;
+  background-color: map-get(var.$colors, "primary");
+
+  &::before {
+    position: absolute;
+    content: "";
+    background: white;
+    width: 150px;
+    height: 200px;
+    z-index: -1;
+    border-radius: 50%;
+  }
+
+  &:hover {
+    color: map-get(var.$colors, "primary");
+  }
+
+  &:before {
+    top: 100%;
+    left: 100%;
+    transition: 0.3s all;
+  }
+
+  &:hover::before {
+    top: -30px;
+    left: -30px;
+  }
+}
+
+@mixin transparent-btn {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}

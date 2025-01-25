@@ -3,8 +3,44 @@
   justify-content: space-between;
   align-items: center;
 }
+.nav .nav__logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+}
+.nav .nav__logo a {
+  color: #3083ff;
+}
 .nav .nav__links ul {
   display: flex;
-  gap: 25px;
+  gap: 45px;
   list-style: none;
+}
+.nav .nav__options button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.nav__user {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  gap: 20px;
+}
+.nav__user .nav__user--profile {
+  display: flex;
+}
+.nav__user .nav__user--profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.nav__user .nav__user--info {
+  font-size: 0.7rem;
+}
+.nav__user .nav__user--menu img {
+  cursor: pointer;
+  width: 15px;
 }
