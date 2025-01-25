@@ -14,7 +14,7 @@ const Auth = () => {
   }
 
   return (
-    <section className="auth__container">
+    <main className="auth__container">
       <div className="auth__container--header">
         <Link to="/">
           <img
@@ -34,9 +34,9 @@ const Auth = () => {
           </p>
         </div>
         {isLogin == "login" ? (
-          <Login onSelect={() => handleLayout("signup")} />
+          <Login onClick={() => handleLayout("signup")} />
         ) : (
-          <Signup onSelect={() => handleLayout("login")} />
+          <Signup onClick={() => handleLayout("login")} />
         )}
       </div>
       <div className="auth__container--cover">
@@ -45,7 +45,7 @@ const Auth = () => {
           <video src={headLightVideo} autoPlay muted></video>
         </div>
       </div>
-    </section>
+    </main>
   );
 };
 

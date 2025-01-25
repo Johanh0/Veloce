@@ -25,6 +25,20 @@ textarea {
   cursor: pointer;
 }
 
+body #root {
+  display: grid;
+  height: fit-content;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+}
+
+body #root :where(header, main, footer) {
+  max-width: 1600px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 50px;
+}
+
 .auth__container {
   position: relative;
   display: flex;

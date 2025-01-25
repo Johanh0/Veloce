@@ -1,9 +1,15 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import { Context } from "../../App";
+import { setLocalStorage } from "../../utils/localStorage";
 import Button from "../Button";
 import Input from "../Input";
-const Login = ({ onSelect }) => {
+const Login = ({ ...props }) => {
+  const navigate = useNavigate();
+
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { isSignedIn, setIsSignedIn, user, setUser } = useContext(Context);
 
   const handleEmail = (value) => {
     setEmail(value);
@@ -17,12 +23,14 @@ const Login = ({ onSelect }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch("/user/login", {
+      const response = await fetch("http://localhost:3000/user/login", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ email, password }),
+        mode: "cors",
+        credentials: "include",
       });
 
       if (!response.ok) {
@@ -32,6 +40,12 @@ const Login = ({ onSelect }) => {
 
       const data = await response.json();
       console.log(data);
+      setIsSignedIn(true);
+      setLocalStorage("isSignedIn", true);
+
+      setUser(data);
+      setLocalStorage("user", data);
+      navigate("/");
     } catch {}
   };
 
@@ -64,7 +78,7 @@ const Login = ({ onSelect }) => {
 
       <div>
         <p className="form--message">
-          Don't have an account? <span onClick={onSelect}>Sign up now</span>
+          Don't have an account? <span {...props}>Sign up now</span>
         </p>
       </div>
     </form>

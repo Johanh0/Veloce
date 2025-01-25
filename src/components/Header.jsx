@@ -1,13 +1,18 @@
+import { useContext } from "react";
+import { Context } from "../App";
 import Button from "./Button";
+import "../css/components/header.css";
 
 const Header = () => {
+  const { isSignedIn, setIsSignedIn, user, setUser } = useContext(Context);
+
   return (
     <header>
-      <nav>
-        <section>
+      <nav className="nav">
+        <section className="nav__logo">
           <a href="">Veloce</a>
         </section>
-        <section>
+        <section className="nav__links">
           <ul>
             <li>
               <a href="/">Home</a>
@@ -20,9 +25,14 @@ const Header = () => {
             </li>
           </ul>
         </section>
-        <section>
-          <Button btnType="btn--transparent">Login</Button>
-          <Button btnType="btn--secondary">Sign Up</Button>
+        <section className="nav__options">
+          {isSignedIn ? (
+            <p>
+              {user.firstName} {user.lastName}
+            </p>
+          ) : (
+            <Button btnType="btn--transparent">Login</Button>
+          )}
         </section>
       </nav>
     </header>

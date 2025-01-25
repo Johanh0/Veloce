@@ -35,7 +35,7 @@ userRouter.post("/signup", async (req, res) => {
       message: "User created",
       id: results.id,
     });
-  } catch {
+  } catch (error) {
     console.error("Error trying to create the user:", error);
     res.status(500).json({ error: "Error creating the user" });
   }
@@ -80,9 +80,13 @@ userRouter.post("/login", async (req, res) => {
       .status(200)
       .json({
         message: "Login successful",
+        firstName: user[0].firstName,
+        lastName: user[0].lastName,
+        email: user[0].email,
+        profile_image_url: user[0].profile_image_url,
         token,
       });
-  } catch {
+  } catch (error) {
     console.error("Error trying to login:", error);
     res.status(500).json({ error: "Error login" });
   }
