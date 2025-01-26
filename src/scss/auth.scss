@@ -57,7 +57,7 @@
       }
 
       & p {
-        font-size: map-get(var.$font-size, "sm");
+        font-size: map-get(var.$font-size, "md");
       }
     }
 
@@ -80,7 +80,7 @@
       gap: 15px;
       min-width: 350px;
       height: fit-content;
-      font-size: map-get(var.$font-size, "sm");
+      font-size: map-get(var.$font-size, "md");
 
       @include smartphone-only {
         width: 100%;

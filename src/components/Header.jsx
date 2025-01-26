@@ -47,9 +47,9 @@ const Header = () => {
               </div>
             </div>
           ) : (
-            <Button btnType="btn--transparent">
-              <Link to="/auth">Login</Link>
-            </Button>
+            <Link to="/auth">
+              <Button btnType="btn--transparent">Login</Button>
+            </Link>
           )}
         </section>
       </nav>

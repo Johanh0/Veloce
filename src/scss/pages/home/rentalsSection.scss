@@ -1,0 +1,38 @@
+@use "../../var";
+@use "../../mixins/buttons" as *;
+
+.rentals {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  padding: 70px 0;
+  gap: 50px;
+
+  .rentals__title {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    p {
+      color: map-get(var.$colors, "dark-gray");
+    }
+
+    h3 {
+      font-size: map-get(var.$font-size, "lg");
+    }
+  }
+
+  .rentals__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    width: 100%;
+    height: fit-content;
+  }
+
+  .rentals__cta button {
+    @include secondary-btn;
+  }
+}

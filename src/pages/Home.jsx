@@ -1,7 +1,13 @@
 import Header from "../components/Header";
 import Button from "../components/Button";
+import BrandsLogosSection from "../components/pages/home/BrandsLogosSection";
+import StepsSection from "../components/pages/home/StepsSection";
+import DetailSection from "../components/pages/home/DetailSection";
+import RentalsSection from "../components/pages/home/RentalsSection";
+import Footer from "../components/Footer";
 import blueCarSvg from "../assets/images/blue-car.svg";
 import "../css/home.css";
+
 const Home = () => {
   return (
     <>
@@ -26,8 +32,12 @@ const Home = () => {
             <img src={blueCarSvg} alt="blue car image" />
           </div>
         </section>
+        <BrandsLogosSection />
+        <StepsSection />
+        <DetailSection />
+        <RentalsSection />
       </main>
-      <footer>foo</footer>
+      <Footer />
     </>
   );
 };

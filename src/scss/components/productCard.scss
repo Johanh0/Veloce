@@ -1,0 +1,52 @@
+@use "../var";
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  height: 400px;
+  border: 2px solid #ebebeb;
+  border-radius: map-get(var.$border-radius, "md");
+  padding: 15px;
+
+  .product-card--img {
+    width: 100%;
+    min-height: 220px;
+
+    img {
+      width: 100%;
+      min-height: 220px;
+      object-fit: cover;
+      border-radius: map-get(var.$border-radius, "sm");
+    }
+  }
+
+  .product-card--title p {
+    text-align: start;
+    font-size: map-get(var.$font-size, "lg");
+    width: 250px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .product-card--price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid #ebebeb;
+    padding-top: 15px;
+
+    p {
+      font-size: map-get(var.$font-size, "md");
+      span {
+        font-size: map-get(var.$font-size, "md");
+        color: map-get(var.$colors, "dark-gray");
+      }
+    }
+
+    a {
+      font-size: map-get(var.$font-size, "md");
+      color: map-get(var.$colors, "primary");
+    }
+  }
+}

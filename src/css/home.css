@@ -29,7 +29,7 @@
   line-height: 2.5em;
   overflow: hidden;
   cursor: pointer;
-  font-size: 17px;
+  font-size: 1.1rem;
   z-index: 1;
   color: white;
   border: 2px solid #3083ff;
@@ -40,9 +40,9 @@
 .hero .hero__left button::before {
   position: absolute;
   content: "";
-  background: white;
-  width: 150px;
-  height: 200px;
+  background: #f3f3f3;
+  width: 170px;
+  height: 220px;
   z-index: -1;
   border-radius: 50%;
 }
@@ -57,4 +57,11 @@
 .hero .hero__left button:hover::before {
   top: -30px;
   left: -30px;
+}
+
+.logos {
+  display: flex;
+  justify-content: space-between;
+  padding: 50px 0;
+  width: 100%;
 }

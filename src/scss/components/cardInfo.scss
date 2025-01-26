@@ -1,0 +1,38 @@
+@use "../var";
+.card-info {
+  max-width: 200px;
+
+  .card-info--icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto;
+    margin-bottom: 20px;
+    border-radius: map-get(var.$border-radius, "md");
+    background-color: white;
+    box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+  }
+
+  .card-info--icon.dark-blue--icon {
+    background: rgb(135, 181, 251) !important;
+    background: linear-gradient(
+      180deg,
+      rgba(135, 181, 251, 1) 0%,
+      rgba(48, 131, 255, 1) 100%
+    ) !important;
+  }
+
+  .card-info__details {
+    h5 {
+      font-size: map-get(var.$font-size, "md");
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: map-get(var.$font-size, "sm");
+    }
+  }
+}

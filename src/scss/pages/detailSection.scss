@@ -1,0 +1,47 @@
+@use "../var";
+
+.detail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+
+  .detail--info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    p {
+      color: map-get(var.$colors, "dark-gray");
+    }
+
+    h3 {
+      font-size: map-get(var.$font-size, "lg");
+    }
+  }
+}
+
+.detail--info__cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  .info__card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .info__card--img {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border-radius: map-get(var.$border-radius, "md");
+      box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+
+    h6 {
+      font-size: map-get(var.$font-size, "md");
+    }
+  }
+}
